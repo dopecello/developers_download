@@ -51,6 +51,7 @@ router.post("/", async (req, res) => {
 router.put("/:id", async (req, res) => {
   try {
     const dbUserData = await User.update(req.body, {
+      individualHooks: true,
       where: {
         id: req.params.id,
       },
