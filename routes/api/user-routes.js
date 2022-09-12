@@ -6,8 +6,8 @@ router.get("/", async (req, res) => {
     const dbUserData = await User.findAll({
       attributes: { exclude: ["password"] },
       where: {
-        id: req.params.id
-      }
+        id: req.params.id,
+      },
     });
     res.json(dbUserData);
   } catch (err) {
@@ -42,6 +42,32 @@ router.post("/", async (req, res) => {
       password: req.body.password,
     });
     res.json(dbUserData);
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+
+router.post("/login", async (req, res) => {
+  try {
+    const dbUserData = await User.findOne({
+      where: {
+        email: req.body.email,
+      },
+    });
+
+    if (!dbUserData) {
+      res.status(400).json({ message: "No user with that email address!" });
+      return;
+    }
+
+    const validPassword = dbUserData.checkPassword(req.body.password);
+    if (!validPassword) {
+      res.status(400).json({ message: "Incorrect password!" });
+      return;
+    }
+
+    res.json({ user: dbUserData, message: "You are now logged in!" });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
