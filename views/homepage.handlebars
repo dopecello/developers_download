@@ -8,7 +8,7 @@
 				<div class="column is-9">
 					<div class="box content">
 						<article class="post">
-							<h4>Bulma: How do you center a button in a box?</h4>
+							<a href="{{post_url}}" target="_blank">{{title}}</a>
 							<div class="media">
 								<div class="media-left">
 									<p class="image is-32x32">
@@ -18,12 +18,14 @@
 								<div class="media-content">
 									<div class="content">
 										<p>
-											<a href="#">@jsmith</a> replied 34 minutes ago &nbsp;
+											by <a href="#">@{{user.username}}</a> {{created_at}} &nbsp;
+											|
+											<a href="/post/{{id}}">{{comments.length}} comment(s)</a>
 										</p>
 									</div>
 								</div>
 								<div class="media-right">
-									<span class="has-text-grey-light"><i class="fa fa-comments"></i> 1</span>
+									<span class="has-text-grey-light"><i class="fa fa-comments"></i> {{vote_count}}</span>
 								</div>
 							</div>
 						</article>
