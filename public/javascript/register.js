@@ -22,4 +22,4 @@ if (username && email && password) {
 
 document
   .querySelector("#register-btn")
-  .addEventListener("submit", signupFormHandler);
+  .addEventListener("click", signupFormHandler);
