@@ -6,7 +6,7 @@
                 <p>
                     by <a href="#">@{{user.username}}</a> {{format_date created_at}} &nbsp;
                     |
-                    <a href="/post/{{id}}">{{comments.length}} comment(s)</a>
+                    <a href="/post/{{id}}">{{comments.length}} {{format_plural "comment" comments.length}}</a>
                 </p>
             </div>
         </div>
