@@ -4,9 +4,9 @@
         <div class="media-content">
             <div class="content">
                 <p>
-                    by <a href="#">@{{post.user.username}}</a> {{post.created_at}} &nbsp;
+                    by <a href="#">@{{post.user.username}}</a> on {{format_date post.created_at}} &nbsp;
                     |
-                    <a href="/post/{{post.id}}">{{post.comments.length}} comment(s)</a>
+                    <a href="/post/{{post.id}}">{{post.comments.length}} {{format_plural "comment" post.comments.length}}</a>
                     <span class="has-text-grey-light ml-4"><i class="fa fa-heart" id="upvote-btn"></i> {{post.vote_count}}</span>
                 </p>
             </div>
