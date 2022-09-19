@@ -13,6 +13,7 @@
         </div>
     </div>
 </article>
+{{#if loggedIn}}
 <div class="field column is-two-fifths ml-6">
     <div class="control">
         <textarea class="textarea" placeholder="Add a comment..." id="comment-form"></textarea>
@@ -21,6 +22,7 @@
 <div class="buttons column is-one-third ml-6">
     <button class="button is-info" id="comment-btn">Add Comment</button>
 </div>
+{{/if}}
 <div class="box">
     {{#each post.comments}}
     <article class="media">
@@ -36,5 +38,7 @@
     </article>
     {{/each}}
 </div>
+{{#if loggedIn}}
 <script src="/javascript/comment.js"></script>
 <script src="/javascript/upvote.js"></script>
+{{/if}}
