@@ -1,5 +1,6 @@
 const router = require("express").Router();
 const { User } = require("../../models");
+const withAuth = require("../../utils/auth")
 
 router.get("/", async (req, res) => {
   try {
@@ -115,7 +116,7 @@ router.post('/logout', (req, res) => {
   }
 });
 
-router.put("/:id", async (req, res) => {
+router.put("/:id", withAuth, async (req, res) => {
   try {
     const dbUserData = await User.update(req.body, {
       individualHooks: true,
@@ -134,7 +135,7 @@ router.put("/:id", async (req, res) => {
   }
 });
 
-router.delete("/:id", async (req, res) => {
+router.delete("/:id", withAuth, async (req, res) => {
   try {
     const dbUserData = await User.destroy({
       where: {
