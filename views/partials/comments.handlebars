@@ -1,0 +1,15 @@
+<div class="box">
+    {{#each this}}
+    <article class="media">
+        <div class="media-content">
+            <div class="content">
+                <p>
+                    <strong>@{{user.username}}</strong> <small>on {{created_at}}</small>
+                    <br>
+                    {{comment_text}}
+                </p>
+            </div>
+        </div>
+    </article>
+    {{/each}}
+</div>

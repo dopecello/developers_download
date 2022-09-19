@@ -23,21 +23,7 @@
     <button class="button is-info" id="comment-btn">Add Comment</button>
 </div>
 {{/if}}
-<div class="box">
-    {{#each post.comments}}
-    <article class="media">
-        <div class="media-content">
-            <div class="content">
-                <p>
-                    <strong>@{{user.username}}</strong> <small>on {{created_at}}</small>
-                    <br>
-                    {{comment_text}}
-                </p>
-            </div>
-        </div>
-    </article>
-    {{/each}}
-</div>
+{{> comments post.comments}}
 {{#if loggedIn}}
 <script src="/javascript/comment.js"></script>
 <script src="/javascript/upvote.js"></script>
