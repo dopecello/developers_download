@@ -1,0 +1,17 @@
+<article class="post mb-5">
+    <a href="{{post_url}}" class="subtitle is-4" target="_blank">{{title}}</a>
+    <div class="media">
+        <div class="media-content">
+            <div class="content">
+                <p>
+                    by <a href="#">@{{user.username}}</a> {{created_at}} &nbsp;
+                    |
+                    <a href="/post/{{id}}">{{comments.length}} comment(s)</a>
+                </p>
+            </div>
+        </div>
+        <div class="media-right">
+            <span class="has-text-grey-light"><i class="fa fa-heart"></i> {{vote_count}}</span>
+        </div>
+    </div>
+</article>

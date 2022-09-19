@@ -8,23 +8,7 @@
 				<div class="column is-9">
 					<div class="box content">
 						{{#each posts as |post|}}
-						<article class="post mb-5">
-							<a href="{{post.post_url}}" class="subtitle is-4" target="_blank">{{post.title}}</a>
-							<div class="media">
-								<div class="media-content">
-									<div class="content">
-										<p>
-											by <a href="#">@{{post.user.username}}</a> {{post.created_at}} &nbsp;
-											|
-											<a href="/post/{{post.id}}">{{post.comments.length}} comment(s)</a>
-										</p>
-									</div>
-								</div>
-								<div class="media-right">
-									<span class="has-text-grey-light"><i class="fa fa-heart"></i> {{post.vote_count}}</span>
-								</div>
-							</div>
-						</article>
+						{{> post-info post}}
 						{{/each}}
 					</div>
 				</div>
