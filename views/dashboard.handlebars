@@ -1,13 +1,28 @@
 <section class="columns is-centered ml-2">
   <form class="new-post-form column is-three-quarters">
-      <h2 class="title is-2">Create New Post</h2>
+    <h2 class="title is-2">Create New Post</h2>
     <div>
       <label for="post-title">Title</label>
-      <input class="input mb-2" type="text" placeholder="Enter Title here...">
+      <input class="input mb-2" type="text" placeholder="Enter Title here..." id="enter-title">
     </div>
     <div>
       <label for="post-url">Link</label>
-<input class="input mb-4" type="email" placeholder="Enter Email here...">    </div>
-    <button type="submit" class="button is-info mb-4">Create Post</button>
+      <input class="input mb-4" type="url" placeholder="Enter Link here..." id="enter-link">
+    </div>
+    <button type="submit" class="button is-info mb-4" id="create-post">Create Post</button>
   </form>
 </section>
+{{#if posts.length}}
+<section class="columns is-centered ml-2">
+  <div class="column is-three-quarters">
+    <h2 class="title is-2">Your Posts:</h2>
+
+    {{#each posts as |post|}}
+    {{> post-info post}}
+    <button href="/dashboard/edit/{{post.id}}" class="edit-link button is-rounded is-small is-success mb-6">Edit
+      Post</button>
+    {{/each}}
+  </div>
+</section>
+{{/if}}
+<script src="/javascript/add-post.js"></script>
