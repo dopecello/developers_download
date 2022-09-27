@@ -6,7 +6,7 @@ async function signupFormHandler(event) {
   const password = document.querySelector("#password-register").value.trim();
 
   if (username && email && password) {
-    await fetch("/api/users", {
+   const response =  await fetch("/api/users", {
       method: "post",
       body: JSON.stringify({
         username,
@@ -16,7 +16,7 @@ async function signupFormHandler(event) {
       headers: { "Content-Type": "application/json" },
     });
     if (response.ok) {
-      console.log("User Added!");
+      document.location.replace("/dashboard");
     } else {
       alert(response.statusText);
     }
