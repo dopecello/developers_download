@@ -15,6 +15,11 @@
 <body>
 	<nav class="navbar is-white topNav mb-3">
 		<div class="container">
+			<div class="navbar-burger burger" id="burger-menu" data-target="topNav">
+				<span></span>
+				<span></span>
+				<span></span>
+			</div>
 			<div id="topNav" class="navbar-menu">
 				<div class="navbar-start">
 					<a class="navbar-item" href="/">Home</a>
@@ -46,7 +51,7 @@
 								</a>
 							</p>
 							<p class="control">
-								<a class="button is-small is-info is-outlined" id="login-btn"  href="/login">
+								<a class="button is-small is-info is-outlined" id="login-btn" href="/login">
 									<span class="icon">
 										<i class="fa fa-user"></i>
 									</span>
@@ -70,8 +75,8 @@
 					<div class="field is-grouped is-grouped-multiline">
 						<div class="control ml-2">
 							<div class="tags has-addons">
-								<a class="tag is-link"
-									href="https://github.com/dopecello/hacker-news-clone">Portfolio Project</a>
+								<a class="tag is-link" href="https://github.com/dopecello/hacker-news-clone">Portfolio
+									Project</a>
 								<span class="tag is-light">William Locke</span>
 							</div>
 						</div>
@@ -86,6 +91,7 @@
 			</div>
 		</div>
 	</footer>
+	<script src="/javascript/burger-toggle.js"></script>
 	{{#if loggedIn}}
 	<script src="/javascript/logout.js"></script>
 	{{/if}}
