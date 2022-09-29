@@ -49,7 +49,7 @@ router.get("/login", (req, res) => {
     res.redirect("/");
     return;
   }
-  res.render("login");
+  res.render("login", { loggedIn: req.session.loggedIn });
 });
 
 router.get("/register", (req, res) => {
