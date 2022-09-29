@@ -1,3 +1,27 @@
+<section class="columns is-centered ml-2">
+    <form class="column is-three-quarters">
+        <h2 class="title is-2">Edit Post</h2>
+        <input class="input mb-2" type="text" value="{{post.title}}" id="title-input-edit">
+        <input class="input mb-2" type="text" value="{{post.post_url}}" id="url-input-edit">
+        <p>
+            by <a href="#">@{{post.user.username}}</a> on {{format_date post.created_at}} &nbsp;
+            |
+            <a href="/post/{{post.id}}">{{post.comments.length}} {{format_plural "comment" post.comments.length}}</a>
+            <span class="has-text-grey-light ml-4"><i class="fa fa-heart" id="upvote-btn"></i>
+                {{post.vote_count}}</span>
+        </p>
+        <p class="mt-3 mb-6">
+            <button class="button is-success" id="save-post-edit">Save Post</button>
+            <button class="button is-danger" id="delete-post-edit">Delete Post</button>
+        </p>
+        <div class="control mb-3">
+            <textarea class="textarea" placeholder="Let others know about your changes..."
+                id="comment-form"></textarea>
+        </div>
+        <button class="button is-info mb-3" id="comment-btn">Add Comment</button>
+        {{> comments post.comments }}
+    </form>
+</section>
 <script src="/javascript/edit-post.js"></script>
 <script src="/javascript/delete-post.js"></script>
 <script src="/javascript/comment.js"></script>
