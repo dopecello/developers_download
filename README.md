@@ -25,7 +25,7 @@ The front-end is generated via the template engine Handlebars.js. This app uses 
 ## Dependencies and Technologies
 
 - bCrypt
-- Connect Session Sequelize
+- connect-session-sequelize
 - Dotenv
 - Express.js
 - Express-Handlebars
@@ -43,4 +43,4 @@ Please send your questions [here](mailto:williamlocke.cello@gmail.com?subject=[G
 
 ## Credits
 
-* William Locke%    
+William Locke  
