@@ -14,11 +14,13 @@ async function loginFormHandler(event) {
       headers: { "Content-Type": "application/json" },
     });
 
-    if (response.ok) {
-      document.location.replace("/");
-    } else {
-      alert(response.statusText);
-    }
+    console.log(response)
+
+    // if (response.ok) {
+    //   console.log(response);
+    // } else {
+    //   alert(response.statusText);
+    // }
   }
 }
   
