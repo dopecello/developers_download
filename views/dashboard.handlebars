@@ -19,7 +19,7 @@
 
     {{#each posts as |post|}}
     {{> post-info post}}
-    <button href="/dashboard/edit/{{post.id}}" class="edit-link button is-rounded is-small is-success mb-6">Edit
+    <button onclick="location.href='/dashboard/edit/{{post.id}}'" class="edit-link button is-rounded is-small is-success mb-6">Edit
       Post</button>
     {{/each}}
   </div>
